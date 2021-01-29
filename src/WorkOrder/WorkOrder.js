@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './WorkOrder.css';
 
-function WorkOrder({ order }) {
+function WorkOrder({ order, nameFilter }) {
   const [worker, setWorker] = useState(null);
 
   useEffect(() => {
@@ -15,12 +15,14 @@ function WorkOrder({ order }) {
 
   if (worker) {
     return (
-      <div className="work-order">
+      <div className={worker.name.toLowerCase().includes(nameFilter.toLowerCase())
+        ? "work-order"
+        : "hidden"}
+      >
         <div className="work-order__details">
           <p className="work-order__name">{order.name}</p>
           <p>{order.description}</p>
         </div>
-
         <div className="worker">
           <div className="worker__image">
             <img src={worker.image} alt="worker"/>
@@ -31,9 +33,9 @@ function WorkOrder({ order }) {
             <p>{worker.email}</p>
           </div>
         </div>
-        <p className="work-order__deadline">{order.deadline}</p>
-
-
+        <p className="work-order__deadline">
+          {new Date(order.deadline).toLocaleString()}
+        </p>
       </div>
     )
   } else {

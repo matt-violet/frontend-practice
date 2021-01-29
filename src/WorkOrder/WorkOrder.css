@@ -1,8 +1,13 @@
 .work-order {
   width: 40%;
+  max-width: 400px;
   border: 1px solid;
   margin-top: 50px;
   padding: 20px;
+}
+
+.hidden {
+  display: none;
 }
 
 .work-order__details {
@@ -19,6 +24,7 @@
 .work-order__deadline {
   margin: 0;
   float: right;
+  font-size: 14px;
 }
 
 .worker__image img {
