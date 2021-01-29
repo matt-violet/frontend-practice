@@ -1,0 +1,31 @@
+.filter__input {
+  width: 100%;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.toggle {
+  margin-top: 10px;
+}
+
+.toggle__text {
+  font-size: 12px;
+  color: grey;
+}
+
+.toggle__switch-outer {
+  display: inline-block;
+  margin: 0 10px;
+  border: 1px solid;
+  width: 100px;
+  border-radius: 10px;
+  background: white;
+}
+
+.toggle__switch-inner {
+  border: 1px solid;
+  width: 50px;
+  height: 15px;
+  border-radius: 10px;
+  background: lightgrey;
+}
