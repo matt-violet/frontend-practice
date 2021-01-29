@@ -13,15 +13,14 @@ class App extends React.Component {
 
   async componentDidMount() {
     const response = await fetch('https://api.hatchways.io/assessment/work_orders');
-    const orders = await response.json();
+    const data = await response.json();
     this.setState({
-      workOrders: orders.orders
+      workOrders: data.orders
     })
   }
   
   render() {
     const { workOrders } = this.state;
-    console.log(workOrders)
 
     if (workOrders && workOrders.length) {
       return (
